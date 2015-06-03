@@ -1,0 +1,26 @@
+{
+  "name": "dayThirteen",
+  "version": "0.0.0",
+  "homepage": "https://github.com/tiffanyRossyRobinson/DayThirteen",
+  "authors": [
+    "tiffanyRossyRobinson <trossys@gmail.com>"
+  ],
+  "description": "jquery",
+  "main": "bower_components",
+  "keywords": [
+    "jquery"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.4",
+    "underscore": "~1.8.3"
+  }
+}
