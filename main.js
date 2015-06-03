@@ -59,3 +59,100 @@ console.log("Welcome to the DOM");
       var div = divNumbers(number1, number2);
       $('#answer').text(div);
   });
+
+
+
+//------------------This is for the calculator---------------------------------
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+var number= 0;
+var display;
+var op;
+var number1;
+$('.clear').click(function(event) {
+    $('.return').text(" ");
+    number1= undefined;
+    display = undefined;
+    number = 0;
+});
+
+function numSet(num) {
+  if(display === undefined){
+      var n = number.toString();
+      var nums= num.toString();
+      n = n + nums;
+      number = Number(n);
+      // console.log(number);
+    $('.return').text(number);
+  }
+  else{
+    var n = number.toString();
+    var nums= num.toString();
+    n = n + nums;
+    number = Number(n);
+    var dis= display + n;
+    // console.log(number);
+  $('.return').text(dis);
+  }
+}
+
+//----------
+
+$('.key').click(function(event) {
+
+  var pass = this.children[0].innerHTML;
+  console.log(pass);
+  console.log(number);
+  numSet(pass);
+
+});
+
+
+$('.operator').click(function(event){
+  op = this.children[0].innerHTML;
+  console.log(op);
+    number1 = number;
+    var n= number1.toString();
+    display = number + op;
+    number = 0;
+    $('.return').text(display);
+});
+
+$('.equal').click(function(event){
+  if(op === '+'){
+    answer= number1 + number;
+    console.log(answer);
+    $('.return').text(answer);
+    number= 0;
+    number1 = undefined;
+    answer = 0;
+    display = undefined;
+  }
+  else if(op === '-'){
+    answer= number1 - number;
+    console.log(answer);
+    $('.return').text(answer);
+    number= 0;
+    number1 = undefined;
+    answer = 0;
+    display = undefined;
+  }
+  else if(op === 'x'){
+    answer= number1 * number;
+    console.log(answer);
+    $('.return').text(answer);
+    number= 0;
+    number1 = undefined;
+    answer = 0;
+    display = undefined;
+  }
+  else if(op === '/'){
+    answer= number1 / number;
+    console.log(answer);
+    $('.return').text(answer);
+    number= 0;
+    number1 = undefined;
+    answer = 0;
+    display = undefined;
+  }
+});
